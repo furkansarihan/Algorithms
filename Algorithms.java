@@ -1,4 +1,4 @@
-package Algorithms;
+package javaapplication;
 
 import java.util.ArrayList;
 
@@ -54,12 +54,29 @@ public class Algorithms {
         }   
         return array;
     }
+	static int[] ShellSort(int [] array){
+		
+            for(int gap = array.length/2 ; gap>0 ; gap /= 2){
+			
+                for(int i = gap ; i < array.length ; i++){
+			
+                    int temp = array[i];
+                    int j;
+                    for(j = i ; j>=gap && array[j-gap]>temp ; j-=gap){
+                        array[j] = array[j-gap];
+                    }
+                    
+                    array[j]=temp;
+                }
+            }	
+		return array;
+	}
     static void PrintArray(int [] dizi){
         for (int i = 0; i < dizi.length; i++) {
             System.out.print(dizi[i]+" ");
         }
     }
     public static void main(String[] args) {
-    
+     
     }
 }
